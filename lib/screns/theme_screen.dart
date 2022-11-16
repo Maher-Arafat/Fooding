@@ -63,7 +63,7 @@ class ThemeScreen extends StatelessWidget {
                   Icons.wb_sunny_outlined,
                   context),
               buildRadioListTitle(
-                  ThemeMode.system,
+                  ThemeMode.dark,
                   lan.getTexts('dark_theme').toString(),
                   Icons.nights_stay_outlined,
                   context),

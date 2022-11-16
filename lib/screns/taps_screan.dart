@@ -22,7 +22,7 @@ class _tapsScreansState extends State<tapsScreans> {
   @override
   void initState() {
     Provider.of<MealProvider>(context, listen: false).getData();
-    Provider.of<ThemeProvider>(context, listen: false).getThemeMode();
+  Provider.of<ThemeProvider>(context, listen: false).getThemeMode();
     Provider.of<ThemeProvider>(context, listen: false).getThemeColors();
     Provider.of<LanguageProvider>(context, listen: false).getLan();
     super.initState();

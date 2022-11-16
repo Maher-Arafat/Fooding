@@ -5,7 +5,7 @@ class ThemeProvider with ChangeNotifier {
   var primaryColor = Colors.pink;
   var accentColor = Colors.amber;
 
-  var tm = ThemeMode.system;
+  ThemeMode tm = ThemeMode.system;
   String themeText = "s";
 
   onChanged(newColor, n) async {
@@ -49,30 +49,29 @@ class ThemeProvider with ChangeNotifier {
     notifyListeners();
     SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.setString("themeText", themeText);
-    
   }
 
   _getThemeText(ThemeMode tm) {
     if (tm == ThemeMode.dark) {
-      themeText = "d";
+      themeText = 'd';
     } else if (tm == ThemeMode.light) {
-      themeText = "l";
+      themeText = 'l';
     } else if (tm == ThemeMode.system) {
-      themeText = "s";
+      themeText = 's';
     }
   }
 
   getThemeMode() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    themeText = prefs.getString("themeText") ?? "s";
-    if (themeText == "d") {
+    themeText = prefs.getString("themeText") ?? 's';
+    
+    if (themeText == 'd') {
       tm = ThemeMode.dark;
-    } else if (themeText == "l") {
+    } else if (themeText == 'l') {
       tm = ThemeMode.light;
-    } else if (themeText == "s") {
+    } else if (themeText == 's') {
       tm = ThemeMode.system;
     }
     notifyListeners();
-    
   }
 }

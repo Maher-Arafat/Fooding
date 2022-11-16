@@ -19,9 +19,8 @@ class favoriteScreans extends StatelessWidget {
     if (favoritemeals.isEmpty) {
       return  Center(
         child: Text(
-
           lan.getTexts('favorites_text').toString(),
-          style: const TextStyle(fontSize: 27),
+          style: const TextStyle(fontSize: 25),
         ),
       );
     } else {
